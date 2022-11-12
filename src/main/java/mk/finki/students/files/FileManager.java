@@ -1,7 +1,7 @@
 package mk.finki.students.files;
 
 
-import mk.finki.students.LineCollection;
+import mk.finki.students.service.LineCollection;
 import mk.finki.students.exceptions.FileExistsException;
 
 import java.io.File;

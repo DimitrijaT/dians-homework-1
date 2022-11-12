@@ -1,4 +1,4 @@
-package mk.finki.students;
+package mk.finki.students.service;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -28,10 +28,14 @@ public class LineCollection {
     }
 
 
-    public void readLines(String path) throws FileNotFoundException, UnsupportedEncodingException {
+    public void readLines(String path) throws IOException {
 
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(new FileInputStream(path), "UTF-8"));
-        lines = bufferedReader.lines().map(line -> Line.createLine(line)).filter(Objects::nonNull).collect(Collectors.toList());
+        Line.columnSkip(bufferedReader.readLine());
+        List<Line> lineList = new ArrayList<>();
+        lineList = bufferedReader.lines().map(line -> Line.createLine(line)).filter(Objects::nonNull).collect(Collectors.toList());
+        lines.add(new Line("x", "y", "type", "name"));
+        lines.addAll(lineList);
     }
 
 }

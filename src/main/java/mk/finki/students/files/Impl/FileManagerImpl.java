@@ -1,8 +1,8 @@
 package mk.finki.students.files.Impl;
 
 
-import mk.finki.students.Line;
-import mk.finki.students.LineCollection;
+import mk.finki.students.service.Line;
+import mk.finki.students.service.LineCollection;
 import mk.finki.students.exceptions.FileExistsException;
 import mk.finki.students.files.FileManager;
 
