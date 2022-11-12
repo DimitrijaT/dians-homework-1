@@ -27,13 +27,11 @@ public class LineCollection {
         lines.stream().forEach(line -> line.toString());
     }
 
-
     public void readLines(String path) throws IOException {
 
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(new FileInputStream(path), "UTF-8"));
         Line.columnSkip(bufferedReader.readLine());
-        List<Line> lineList = new ArrayList<>();
-        lineList = bufferedReader.lines().map(line -> Line.createLine(line)).filter(Objects::nonNull).collect(Collectors.toList());
+        List<Line> lineList = bufferedReader.lines().map(line -> Line.createLine(line)).filter(Objects::nonNull).collect(Collectors.toList());
         lines.add(new Line("x", "y", "type", "name"));
         lines.addAll(lineList);
     }

@@ -38,7 +38,7 @@ public class Line {
         }
         String location = string[3];
         if (hasBuildingInfo) {
-            if (string.length < 5) {
+            if (string.length < 5 || string[4].equals("")) {
                 return null;
             }
             location = string[4];
