@@ -14,7 +14,7 @@ public class PipeAndFilterProblem {
         Pipe<String> pipe = new Pipe<>();
 
         FileManager fileManager = new FileManagerImpl();
-        File[] files = fileManager.readCsvInFolder("C:\\Users\\Public\\Documents\\PipeAndFilter\\src\\main\\java\\homework_1\\data");
+        File[] files = fileManager.readCsvInFolder("C:\\Users\\Public\\Documents\\dians_homework_1\\src\\main\\java\\mk\\finki\\students\\input");
 
         int i = 1;
 
@@ -22,7 +22,7 @@ public class PipeAndFilterProblem {
             LineCollection collection = new LineCollection();
             collection.readLines(s.getAbsolutePath());
             collection.printLinesCsv();
-            File f = fileManager.createNewFile(String.format("C:\\Users\\Public\\Documents\\PipeAndFilter\\src\\main\\java\\homework_1\\output\\%d.csv", i++));
+            File f = fileManager.createNewFile(String.format("C:\\Users\\Public\\Documents\\dians_homework_1\\src\\main\\java\\mk\\finki\\students\\output\\%d_UTF8.csv", i++));
             fileManager.writeToTextFile(f, collection, false);
         }
 

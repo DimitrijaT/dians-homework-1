@@ -23,9 +23,10 @@ public class FileManagerImpl implements FileManager {
     @Override
     public void writeToTextFile(File to, LineCollection lineCollection, Boolean append) throws IOException {
 
-        BufferedWriter writer = null;
+        PrintWriter writer = null;
+
         try {
-            writer = new BufferedWriter(new FileWriter(to, append));
+            writer = new PrintWriter(new FileWriter(to, append));
             for (Line line : lineCollection.getLines()) {
                 writer.write(line.toString());
             }
