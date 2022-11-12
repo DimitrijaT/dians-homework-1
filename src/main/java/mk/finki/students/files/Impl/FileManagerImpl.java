@@ -25,10 +25,16 @@ public class FileManagerImpl implements FileManager {
 
         PrintWriter writer = null;
 
+        OutputStream os = new FileOutputStream(to.getAbsolutePath());
+        os.write(239);
+        os.write(187);
+        os.write(191);
+
         try {
-            writer = new PrintWriter(new FileWriter(to, append));
+//            writer = new PrintWriter(new FileWriter(to, append));
+            writer = new PrintWriter(new OutputStreamWriter(os, "UTF-8"));
             for (Line line : lineCollection.getLines()) {
-                writer.write(line.toString());
+                writer.print(line.toString());
             }
 
         } catch (IOException exception) {
